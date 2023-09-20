@@ -55,3 +55,9 @@ jobs:
           npm i
         env:
           CI: true
+
+      - name: upload coverage
+        if: success()
+        uses: codecov/codecov-action@v3
+        with:
+          name: ${{ runner.os }} node.js ${{ matrix.node-version }}
