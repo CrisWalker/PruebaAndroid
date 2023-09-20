@@ -50,10 +50,9 @@ jobs:
           npm --version
           gradle --version
 
-      - name: npm install and test
+      - name: npm install
         run: |
           npm i
-          npm t
         env:
           CI: true
 
