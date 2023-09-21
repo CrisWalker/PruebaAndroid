@@ -50,16 +50,22 @@ jobs:
           npm --version
           gradle --version
 
+      - name: Instalar Cordova
+        run: npm install -g cordova
+
       - name: npm install
         run: |
           npm i
         env:
           CI: true
 
+      - name: Construir aplicación Android
+        run: cordova build android
+
+
       - name: upload coverage
         if: success()
         uses: codecov/codecov-action@v3
         with:
           name: ${{ runner.os }} node.js ${{ matrix.node-version }}
-      - name: Construir aplicación Android
-        run: cordova build android
+     
