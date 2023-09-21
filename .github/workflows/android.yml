@@ -51,7 +51,9 @@ jobs:
           gradle --version
 
       - name: Instalar Cordova
-        run: npm install -g cordova
+        run: |
+          npm install -g cordova
+          cordova platform add android
 
       - name: npm install
         run: |
