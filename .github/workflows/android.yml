@@ -62,4 +62,4 @@ jobs:
         with:
           name: ${{ runner.os }} node.js ${{ matrix.node-version }}
       - name: Construir aplicación Android
-          run: cordova build android
+        run: cordova build android
