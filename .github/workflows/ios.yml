@@ -54,4 +54,4 @@ jobs:
           CI: true
           
       - name: Construir aplicaciones
-        run: cordova build ios
+        run: cordova build
