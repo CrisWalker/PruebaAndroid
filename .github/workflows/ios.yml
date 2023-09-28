@@ -40,6 +40,11 @@ jobs:
         run: |
           node --version
           npm --version
+          
+      - name: Instalar Cordova
+        run: |
+          npm install -g cordova
+          cordova platform add ios
 
       - name: npm install
         run: |
@@ -47,3 +52,6 @@ jobs:
           npm ci
         env:
           CI: true
+          
+      - name: Construir aplicaciones
+        run: cordova build ios
