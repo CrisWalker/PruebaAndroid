@@ -54,8 +54,6 @@ jobs:
         run: |
           npm install -g cordova
           cordova platform add android
-          cordova platform add ios
-          cordova platform ls
 
       - name: npm install
         run: |
