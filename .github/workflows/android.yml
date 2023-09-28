@@ -54,6 +54,8 @@ jobs:
         run: |
           npm install -g cordova
           cordova platform add android
+          cordova platform add ios
+          cordova platform ls
 
       - name: npm install
         run: |
@@ -61,13 +63,6 @@ jobs:
         env:
           CI: true
 
-      - name: Construir aplicación Android
-        run: cordova build android
-
-
-      - name: upload coverage
-        if: success()
-        uses: codecov/codecov-action@v3
-        with:
-          name: ${{ runner.os }} node.js ${{ matrix.node-version }}
+      - name: Construir aplicaciones
+        run: cordova build 
      
