@@ -15,7 +15,7 @@
 # specific language governing permissions and limitations
 # under the License.
 
-name: Node CI
+name: android CI
 
 on: [push, pull_request]
 
