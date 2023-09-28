@@ -48,29 +48,5 @@ jobs:
         env:
           CI: true
 
-  non-darwin:
-    name: NodeJS ${{ matrix.node-version }} on ${{ matrix.os }}
-    runs-on: ${{ matrix.os }}
-    strategy:
-      matrix:
-        node-version: [16.x, 18.x, 20.x]
-        os: [ubuntu-latest, windows-latest]
-
-    steps:
-      - uses: actions/checkout@v3
-
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v3
-        with:
-          node-version: ${{ matrix.node-version }}
-
-      - name: Environment Information
-        run: |
-          node --version
-          npm --version
-
-      - name: npm install
-        run: |
-          npm ci
         env:
           CI: true
